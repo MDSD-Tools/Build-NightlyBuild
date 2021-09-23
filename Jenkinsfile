@@ -25,7 +25,7 @@ node {
                     def jobPrefix = "MDSD-Tools/${repoName}/"
                     ['main', 'master'].each {
                         def jobName = "$jobPrefix${it}"
-                        if (jenkins.model.Jenkins.instance.getItem(jobName) != null) {
+                        if (Jenkins.instance.getItemByFullName(jobName)) {
                             buildJobs["${repoName}"] = {
                                 build job: jobName, propagate: false
                             }
