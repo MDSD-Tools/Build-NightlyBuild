@@ -15,8 +15,10 @@ node {
         if (isTriggeredByTimer || isTriggeredByUser) {
 
             def hierarchy = [
-                ['Build-LicenseFeature'],
-                ['Library-EMFEditUtils'],
+                ['Build-LicenseFeature', 'ThirdParty-Library'],
+                ['Library-EMFEditUtils', 'EclipseAddon-CDODebugUtils', 'Library-StandaloneInitialization'],
+                ['Ecore-Workflow', 'Library-JUnit5Utils'],
+                ['Build-UpdateSite']
             ]
 
             hierarchy.each { repoNames ->
